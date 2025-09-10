@@ -1,0 +1,28 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8080:8080" # App port
+      - "5005:5005" # Debug port
+    environment:
+      # Enables remote debugging for VS Code
+      - JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005
+    volumes:
+      - ./backend/src:/app/src # Mount source code for live reload with Spring Dev Tools
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

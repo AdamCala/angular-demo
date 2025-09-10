@@ -1,0 +1,41 @@
+Gradle/Spring Boot
+.gradle
+/build/
+!/backend/gradle/wrapper/gradle-wrapper.jar
+!/frontend/gradle/wrapper/gradle-wrapper.jar
+
+IDE files (IntelliJ, VS Code, Eclipse)
+.idea/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.factorypath
+.settings/
+.vscode/
+!/.vscode/launch.json
+
+Maven (if used in the future)
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+
+Log files
+*.log
+
+OS-specific files
+.DS_Store
+Thumbs.db
+
+Angular/npm
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.angular/
+npm-debug.log*
+yarn-error.log
